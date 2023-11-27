@@ -1,0 +1,218 @@
+SKU ID,Available Colors,Available Sizes,Type,Materials,First available,In Stock?,Male or Female cut
+A13,Yellow,"['S', 'L']",Shirt,Leather,2008-11-16,False,Female
+A16,Grey,"['L', 'S']",Shirt,Cotton,2008-09-03,False,Female
+B4,White,"['M', 'XXL']",Blouse,Denim,2008-07-26,True,Female
+B17,Purple,"['XS', 'S', 'M', 'L', 'XXL', 'XL']",Dress,Denim,2008-04-03,False,Female
+B8,Red,"['XL', 'S', 'L', 'M', 'XS']",Blouse,Cotton,2008-08-27,False,Male
+C56,Purple,"['XXL', 'XL', 'XS', 'M']",Jacket,Wool,2008-01-17,True,Male
+C57,White,"['XS', 'L', 'M']",Dress,Denim,2008-01-18,True,Female
+P67,Green,"['XL', 'XS', 'L', 'S', 'XXL']",Blouse,Denim,2008-08-13,False,Female
+P82,Red,['S'],Jeans,Cotton,2008-12-30,True,Male
+B31,Pink,['XS'],Shirt,Wool,2008-04-23,True,Female
+B21,White,"['XS', 'M', 'XL', 'XXL']",Jeans,Cotton,2008-04-24,False,Female
+B24,Orange,"['S', 'M', 'XL', 'L', 'XS', 'XXL']",Shirt,Leather,2008-11-15,False,Male
+B27,Orange,"['L', 'S', 'XL']",Jacket,Denim,2008-10-03,False,Male
+A10,Black,['M'],Pants,Leather,2008-11-26,False,Female
+P1,Black,"['S', 'XXL', 'M']",Shirt,Leather,2008-04-29,False,Male
+P34,Black,"['XS', 'XL', 'M', 'L']",Dress,Denim,2008-12-24,False,Male
+P33,Red,['XL'],Jeans,Denim,2008-07-26,False,Female
+C4,Grey,"['XS', 'S', 'XL', 'M', 'L', 'XXL']",Jacket,Denim,2008-01-03,True,Female
+C7,White,"['L', 'XXL']",Jacket,Cotton,2008-11-25,True,Male
+C10,Purple,"['XL', 'L', 'M', 'XXL']",Shirt,Polyester,2008-05-03,True,Male
+C17,Red,"['XXL', 'L', 'XL', 'XS', 'S']",Pants,Leather,2008-08-29,False,Female
+P77,White,['L'],Jacket,Polyester,2008-04-20,True,Male
+A34,Green,"['S', 'XS', 'XL', 'XXL', 'L', 'M']",Jeans,Cotton,2008-09-18,True,Male
+A37,Blue,"['L', 'XXL', 'S', 'XL', 'M', 'XS']",Blouse,Leather,2008-10-04,True,Female
+C25,Yellow,"['XL', 'S', 'M']",Dress,Silk,2008-12-18,False,Female
+C21,Red,"['XL', 'XS', 'S']",Dress,Cotton,2008-09-18,False,Female
+C15,Blue,['S'],Dress,Wool,2008-12-25,False,Male
+C53,Grey,"['M', 'XXL', 'L', 'XL', 'S']",Shirt,Denim,2008-07-15,True,Female
+B26,Pink,"['XXL', 'S', 'XL', 'L']",Shirt,Silk,2008-11-23,False,Female
+A11,Grey,"['XXL', 'M', 'S', 'XS']",Pants,Wool,2008-06-29,True,Female
+C5,Red,"['S', 'M', 'XXL']",Shirt,Silk,2008-09-26,False,Female
+P60,Purple,"['XL', 'XXL', 'L', 'M', 'XS', 'S']",Dress,Denim,2008-09-07,True,Male
+P56,White,"['L', 'XXL', 'XL', 'XS']",Jacket,Denim,2008-02-12,False,Male
+P55,Grey,['S'],Jacket,Silk,2008-01-19,False,Female
+P48,Red,"['XS', 'S', 'XL']",Jeans,Polyester,2008-09-11,True,Female
+P50,Grey,"['L', 'S']",Jacket,Wool,2008-05-06,False,Female
+P42,Blue,"['L', 'XL']",Jacket,Leather,2008-03-01,False,Male
+P23,Red,"['XS', 'S', 'XXL', 'L', 'M']",Jacket,Wool,2008-04-12,False,Male
+C49,Blue,"['M', 'XXL', 'L']",Jeans,Cotton,2008-09-20,False,Male
+B23,Blue,"['XS', 'XXL']",Pants,Leather,2008-08-27,True,Male
+C19,White,['M'],Blouse,Polyester,2008-03-06,False,Female
+C34,Blue,"['XL', 'XXL']",Dress,Polyester,2008-06-01,False,Male
+C40,Grey,"['XS', 'M', 'XXL', 'XL', 'S', 'L']",Jeans,Silk,2008-12-06,True,Male
+C50,Green,"['XL', 'XS', 'L', 'S', 'M']",Jeans,Denim,2008-02-28,False,Female
+C42,Black,"['XL', 'XXL', 'L', 'M', 'S']",Dress,Cotton,2008-10-26,False,Male
+A18,Red,"['XL', 'XS']",Dress,Cotton,2008-12-26,False,Male
+A1,Orange,"['XL', 'XS', 'XXL', 'L', 'S']",Pants,Leather,2008-12-04,True,Female
+B1,Pink,"['L', 'XXL', 'S', 'XS', 'XL']",Jacket,Polyester,2008-12-06,True,Male
+B16,Purple,['L'],Dress,Polyester,2008-10-05,True,Female
+A3,White,"['XL', 'S', 'L', 'M', 'XS', 'XXL']",Jeans,Wool,2008-10-11,True,Male
+B3,Yellow,"['XL', 'L', 'S']",Jeans,Polyester,2008-02-01,False,Female
+B30,Red,"['M', 'S', 'XS', 'XXL', 'L', 'XL']",Dress,Denim,2008-12-08,False,Female
+P16,Black,"['S', 'M', 'XS', 'XL', 'L']",Jacket,Denim,2008-06-18,True,Female
+A2,Grey,"['L', 'XXL', 'XS', 'S']",Jacket,Wool,2008-01-21,True,Male
+A5,Black,"['XS', 'M', 'S']",Blouse,Cotton,2008-05-23,False,Male
+A41,Grey,"['L', 'XL']",Jeans,Polyester,2008-03-11,False,Female
+B2,Orange,"['S', 'M', 'XXL', 'XL', 'XS', 'L']",Shirt,Leather,2008-11-28,False,Female
+B13,Orange,"['L', 'XS', 'S', 'XL']",Jacket,Silk,2008-10-27,False,Male
+B15,Blue,"['XXL', 'S', 'L']",Jacket,Wool,2008-02-04,True,Male
+B9,Green,"['XL', 'XS', 'XXL', 'S', 'M', 'L']",Jeans,Denim,2008-09-18,False,Male
+B20,Black,"['XS', 'S', 'XL', 'L', 'XXL', 'M']",Pants,Silk,2008-06-09,True,Female
+B25,Purple,"['L', 'M']",Jeans,Cotton,2008-07-13,True,Male
+B33,Purple,"['XS', 'L', 'S', 'XXL', 'XL']",Blouse,Polyester,2008-09-25,False,Female
+B34,Red,['S'],Blouse,Cotton,2008-08-26,True,Female
+C2,Pink,"['XL', 'XS', 'S', 'L']",Blouse,Cotton,2008-10-20,False,Female
+C33,Purple,"['M', 'XXL', 'XS', 'L']",Blouse,Polyester,2008-11-09,False,Male
+C35,Purple,"['L', 'XXL', 'XL', 'XS', 'M', 'S']",Shirt,Polyester,2008-10-23,False,Female
+C55,Black,['XS'],Jeans,Wool,2008-05-27,True,Male
+C59,Yellow,"['XXL', 'S', 'M']",Shirt,Leather,2008-02-07,False,Male
+P61,Orange,['S'],Shirt,Denim,2008-02-22,True,Male
+P62,Grey,"['S', 'XL', 'L', 'XS', 'XXL', 'M']",Dress,Polyester,2008-08-30,False,Female
+A6,Pink,['XL'],Shirt,Cotton,2008-07-02,True,Male
+C47,Green,"['XL', 'XS', 'L', 'M']",Dress,Leather,2008-04-19,False,Male
+B32,Green,"['XL', 'XS', 'XXL', 'L', 'M']",Blouse,Wool,2008-01-11,True,Male
+A17,Grey,['XXL'],Dress,Wool,2008-02-20,True,Male
+A7,Red,"['XXL', 'XL', 'XS', 'S']",Dress,Wool,2008-09-19,True,Male
+A8,Purple,"['XL', 'L', 'XS']",Jacket,Leather,2008-07-12,True,Male
+A9,Blue,"['XL', 'M', 'XXL', 'S']",Shirt,Cotton,2008-09-21,True,Female
+A20,Purple,"['XS', 'M', 'XXL', 'S', 'XL', 'L']",Blouse,Wool,2008-10-26,True,Female
+A32,Purple,"['XXL', 'M']",Pants,Silk,2008-04-07,False,Female
+C11,White,"['XL', 'XS']",Dress,Silk,2008-10-19,False,Male
+C22,Blue,"['S', 'XXL', 'L', 'XL', 'XS', 'M']",Jeans,Polyester,2008-06-19,True,Female
+P12,Pink,"['S', 'XXL', 'XS', 'L', 'XL']",Dress,Leather,2008-08-07,True,Female
+A4,Blue,"['XL', 'S', 'L', 'XXL', 'XS']",Shirt,Silk,2008-08-21,False,Female
+A23,Blue,"['XS', 'M']",Shirt,Denim,2008-06-23,False,Male
+B12,White,"['XL', 'XS']",Blouse,Cotton,2008-05-16,False,Female
+B10,Grey,"['M', 'XXL', 'XL', 'L']",Shirt,Denim,2008-07-22,True,Male
+C14,Pink,"['XXL', 'L', 'XL', 'M', 'S']",Jeans,Denim,2008-09-04,True,Female
+A12,Orange,"['M', 'L', 'XS', 'XXL', 'XL']",Jacket,Wool,2008-02-10,False,Female
+A31,Pink,"['XS', 'S', 'M', 'XL']",Shirt,Wool,2008-08-09,True,Male
+A15,Orange,['L'],Shirt,Silk,2008-10-10,True,Female
+B7,Blue,"['M', 'L', 'S', 'XL', 'XXL', 'XS']",Pants,Silk,2008-05-10,True,Male
+C8,Pink,"['M', 'XL', 'S', 'L', 'XS']",Jeans,Wool,2008-04-08,False,Male
+C18,Blue,"['XXL', 'XS', 'S', 'L']",Shirt,Polyester,2008-04-07,True,Male
+P2,Red,"['M', 'XS', 'L', 'XXL', 'XL']",Jacket,Leather,2008-03-06,True,Male
+P10,White,"['XL', 'M', 'XS', 'S', 'L', 'XXL']",Jeans,Cotton,2008-03-19,False,Male
+C26,Grey,"['L', 'M']",Shirt,Leather,2008-11-28,False,Female
+C31,White,"['XS', 'XXL', 'S']",Dress,Silk,2008-07-06,False,Female
+A35,Purple,"['XXL', 'M', 'XL', 'S', 'XS', 'L']",Jeans,Silk,2008-11-20,False,Male
+A36,Yellow,"['XS', 'XL', 'M', 'L', 'S', 'XXL']",Jeans,Leather,2008-09-06,False,Male
+C46,Grey,"['XS', 'XL', 'L', 'XXL']",Pants,Wool,2008-12-17,False,Male
+P29,Green,"['L', 'XXL', 'XL', 'M', 'S', 'XS']",Dress,Silk,2008-07-02,True,Male
+A21,Orange,"['L', 'M']",Blouse,Silk,2008-08-20,True,Male
+P63,Red,['L'],Jacket,Polyester,2008-05-09,False,Male
+P30,Black,"['S', 'XL', 'M', 'XXL']",Shirt,Cotton,2008-06-02,True,Female
+P32,Blue,"['XS', 'S']",Dress,Wool,2008-01-25,True,Female
+P66,Green,"['XXL', 'XL']",Jacket,Denim,2008-08-14,False,Female
+P57,White,"['XS', 'L', 'M', 'XL']",Pants,Wool,2008-06-16,False,Female
+P43,Blue,"['M', 'L', 'XS']",Jacket,Wool,2008-06-29,False,Female
+P4,Yellow,['XS'],Dress,Leather,2008-11-01,False,Female
+A28,Yellow,"['XXL', 'M', 'L']",Jeans,Wool,2008-05-04,False,Female
+B28,Orange,"['XL', 'S', 'L', 'XS', 'M', 'XXL']",Dress,Cotton,2008-07-02,True,Female
+P15,Blue,"['M', 'XL', 'XS', 'S', 'XXL', 'L']",Pants,Denim,2008-01-09,False,Male
+A19,Black,"['S', 'M', 'L', 'XL']",Shirt,Silk,2008-11-21,True,Male
+B19,Purple,"['XXL', 'XS', 'L', 'S', 'M']",Dress,Leather,2008-03-09,False,Female
+B14,Blue,"['XS', 'XL', 'S']",Jeans,Leather,2008-04-21,True,Female
+B6,Grey,"['S', 'XXL', 'XS', 'XL']",Shirt,Wool,2008-02-06,False,Female
+A29,Red,"['S', 'XS', 'XXL', 'L', 'XL', 'M']",Shirt,Polyester,2008-06-28,True,Male
+P49,Purple,"['S', 'XS']",Blouse,Leather,2008-08-06,True,Male
+C3,Blue,"['XXL', 'M', 'L', 'XL', 'XS']",Dress,Denim,2008-03-28,True,Female
+C9,Black,"['XL', 'M', 'XS', 'L', 'S']",Pants,Polyester,2008-04-08,True,Male
+C36,White,['XS'],Pants,Polyester,2008-02-11,False,Female
+C37,Yellow,"['L', 'XXL', 'M', 'S']",Blouse,Leather,2008-07-18,False,Female
+C39,Pink,"['XL', 'XXL', 'XS', 'L', 'S']",Pants,Denim,2008-10-21,False,Female
+C51,Purple,"['XXL', 'XL']",Jeans,Cotton,2008-06-15,False,Female
+C52,Pink,['XXL'],Blouse,Leather,2008-05-12,False,Female
+A42,Pink,"['XL', 'L', 'XS', 'M', 'XXL', 'S']",Pants,Silk,2008-10-21,False,Female
+B29,Orange,['S'],Dress,Polyester,2008-06-26,False,Female
+B11,Green,"['M', 'L', 'XL', 'XXL', 'XS', 'S']",Pants,Wool,2008-04-03,True,Female
+P6,Green,"['XL', 'L']",Jacket,Silk,2008-07-16,True,Female
+P17,Orange,"['M', 'L']",Blouse,Wool,2008-12-11,False,Female
+P11,Black,"['XS', 'L']",Jeans,Cotton,2008-01-01,True,Female
+C1,Orange,['L'],Dress,Silk,2008-10-17,True,Male
+C13,Yellow,"['XL', 'XS', 'XXL', 'S']",Jeans,Cotton,2008-12-27,False,Male
+A14,White,"['XS', 'XXL', 'S', 'M', 'L']",Dress,Polyester,2008-03-17,False,Female
+A24,Grey,"['XXL', 'XL']",Blouse,Polyester,2008-02-18,True,Female
+P20,Purple,['XS'],Jeans,Silk,2008-01-23,False,Female
+P40,Black,['L'],Blouse,Polyester,2008-08-28,False,Female
+P51,Yellow,"['M', 'XS', 'XXL']",Pants,Wool,2008-01-11,True,Male
+P25,Orange,"['L', 'XL', 'XS', 'XXL']",Shirt,Polyester,2008-04-26,True,Female
+C44,Yellow,"['XS', 'S']",Jacket,Silk,2008-09-13,False,Female
+C45,White,"['XS', 'L', 'XL', 'M']",Pants,Silk,2008-04-25,True,Male
+B22,Red,"['XL', 'XS']",Jeans,Leather,2008-12-29,True,Male
+A30,Black,"['S', 'L', 'XS', 'XL', 'M', 'XXL']",Jacket,Silk,2008-08-24,False,Male
+C58,White,"['XS', 'XXL', 'XL', 'L', 'S']",Blouse,Denim,2008-06-24,False,Male
+C54,White,"['M', 'XS']",Dress,Denim,2008-06-30,False,Male
+A26,Grey,"['S', 'M', 'XXL']",Pants,Cotton,2008-08-10,True,Male
+A33,Purple,"['XS', 'XL', 'L', 'XXL', 'M']",Shirt,Wool,2008-10-09,False,Female
+A38,Grey,"['XXL', 'XL', 'M', 'S', 'XS', 'L']",Blouse,Leather,2008-06-25,False,Female
+A39,Black,"['XXL', 'M', 'S', 'XS']",Jeans,Polyester,2008-06-16,True,Male
+P8,Green,"['S', 'M', 'XL', 'XXL', 'XS', 'L']",Dress,Polyester,2008-10-30,False,Male
+P19,White,"['L', 'M', 'XL', 'XXL', 'XS']",Shirt,Denim,2008-04-27,False,Male
+P39,Orange,"['XXL', 'L', 'M', 'XS', 'S', 'XL']",Pants,Polyester,2008-02-04,True,Male
+P80,Orange,['L'],Jacket,Cotton,2008-05-23,True,Male
+P78,Yellow,"['XXL', 'L', 'XS']",Jeans,Polyester,2008-06-07,False,Male
+P76,Red,['M'],Blouse,Silk,2008-12-02,True,Male
+A40,Purple,"['S', 'XL', 'XXL', 'L', 'XS', 'M']",Shirt,Cotton,2008-03-08,False,Male
+B5,Green,['S'],Jeans,Silk,2008-01-02,False,Male
+P3,Red,"['XS', 'M', 'S']",Pants,Wool,2008-04-14,False,Male
+P7,Red,"['S', 'XL', 'L', 'XXL', 'M']",Blouse,Polyester,2008-06-23,False,Female
+P14,Black,"['S', 'XL', 'XS', 'M']",Jeans,Leather,2008-05-25,False,Female
+P18,Purple,['L'],Dress,Leather,2008-12-10,True,Male
+P35,Green,"['M', 'L', 'XL']",Blouse,Denim,2008-08-23,False,Male
+C6,Yellow,"['M', 'L', 'XL', 'S']",Jeans,Silk,2008-03-11,True,Male
+C12,Grey,"['XS', 'XXL']",Jacket,Cotton,2008-03-23,True,Male
+C30,Blue,"['M', 'XL', 'XS']",Jeans,Wool,2008-03-04,True,Male
+P5,Purple,"['M', 'XXL', 'L']",Jeans,Polyester,2008-09-17,True,Female
+P70,Pink,['XL'],Pants,Polyester,2008-12-29,True,Male
+P36,Orange,"['S', 'XS', 'XL', 'XXL', 'L']",Jacket,Polyester,2008-12-12,True,Male
+P9,Yellow,['M'],Pants,Denim,2008-10-21,False,Female
+P26,Purple,"['M', 'XS']",Pants,Denim,2008-09-15,True,Male
+P52,Purple,"['L', 'XXL', 'M', 'XS', 'XL', 'S']",Jeans,Leather,2008-02-14,True,Male
+P64,Red,"['XL', 'XS', 'XXL']",Shirt,Leather,2008-03-19,False,Female
+P37,Orange,"['XL', 'XXL', 'M', 'XS', 'L', 'S']",Jeans,Wool,2008-07-16,True,Male
+P69,Orange,"['M', 'XS']",Pants,Wool,2008-07-27,True,Female
+A22,Orange,['S'],Jacket,Denim,2008-07-19,True,Female
+C41,Pink,"['XS', 'XXL', 'L', 'XL']",Blouse,Wool,2008-01-22,False,Male
+P13,Blue,"['L', 'XXL', 'M']",Shirt,Leather,2008-08-22,True,Male
+C16,Yellow,"['S', 'XL', 'XS', 'L']",Blouse,Silk,2008-12-05,False,Female
+P46,Yellow,"['S', 'XS', 'M', 'L']",Shirt,Cotton,2008-10-25,True,Female
+C48,Orange,['XL'],Blouse,Leather,2008-06-02,True,Female
+P81,Pink,"['L', 'XXL', 'S']",Dress,Leather,2008-07-13,True,Male
+P38,Black,"['S', 'XS', 'L', 'XL']",Dress,Wool,2008-02-25,False,Female
+P47,Grey,['M'],Blouse,Wool,2008-04-01,True,Female
+P44,Grey,"['M', 'S', 'XL']",Pants,Denim,2008-04-14,False,Female
+P59,Pink,"['XS', 'S', 'XXL', 'XL', 'L']",Jacket,Denim,2008-10-12,True,Female
+P65,Yellow,"['S', 'L']",Shirt,Denim,2008-06-30,True,Male
+C38,Red,"['XL', 'L', 'M', 'XXL', 'XS', 'S']",Jacket,Polyester,2008-07-25,False,Female
+C20,Purple,"['XS', 'L', 'XL', 'M', 'XXL']",Blouse,Cotton,2008-11-11,False,Female
+C27,Yellow,['S'],Dress,Wool,2008-11-24,False,Female
+C28,Orange,"['XXL', 'L', 'M', 'XS']",Pants,Polyester,2008-03-06,False,Female
+C43,Pink,"['L', 'M', 'S', 'XS', 'XL', 'XXL']",Jeans,Silk,2008-12-31,True,Male
+P58,Green,"['XS', 'M', 'S', 'XL', 'XXL', 'L']",Pants,Wool,2008-09-21,True,Male
+P21,Red,"['S', 'XS']",Pants,Wool,2008-05-26,True,Female
+P72,Purple,"['S', 'XXL', 'XL', 'L']",Pants,Cotton,2008-07-10,True,Female
+P73,Orange,"['XL', 'XXL', 'XS']",Pants,Leather,2008-11-10,True,Male
+C24,Yellow,['XXL'],Shirt,Wool,2008-08-02,True,Female
+P41,Black,"['XS', 'L', 'M', 'S']",Pants,Cotton,2008-09-25,False,Male
+C29,Red,"['XXL', 'XL', 'XS']",Dress,Polyester,2008-08-07,False,Male
+P71,Green,"['M', 'XS']",Pants,Polyester,2008-05-13,True,Male
+C32,Orange,"['XS', 'S', 'L']",Blouse,Wool,2008-06-22,True,Male
+C23,Blue,['XL'],Pants,Polyester,2008-12-01,True,Female
+A27,Blue,"['XS', 'XL', 'XXL', 'M', 'S', 'L']",Jeans,Silk,2008-10-16,False,Male
+P74,Purple,"['XS', 'XL', 'L', 'S']",Pants,Wool,2008-01-09,True,Female
+P68,Green,['M'],Jeans,Wool,2008-07-28,True,Male
+P75,Purple,"['XXL', 'L']",Shirt,Denim,2008-01-18,True,Male
+A25,Grey,"['XS', 'XXL']",Jeans,Polyester,2008-05-27,False,Male
+P27,Grey,"['XL', 'S']",Dress,Silk,2008-10-29,True,Female
+P24,Blue,"['M', 'XL', 'L', 'XS', 'XXL']",Blouse,Cotton,2008-08-20,True,Male
+A43,Grey,"['L', 'XS', 'M', 'S']",Blouse,Silk,2008-12-18,True,Male
+P31,Purple,"['XXL', 'L', 'XS', 'M', 'S', 'XL']",Dress,Cotton,2008-07-31,True,Male
+P53,Yellow,"['XS', 'XXL', 'S', 'M', 'L']",Dress,Wool,2008-04-30,False,Male
+P45,Pink,"['L', 'XL']",Jeans,Denim,2008-03-08,False,Male
+P54,Black,"['S', 'XXL', 'L', 'XS', 'M', 'XL']",Jacket,Polyester,2008-02-29,False,Female
+P28,Blue,"['L', 'M', 'S']",Blouse,Silk,2008-05-05,False,Female
+P22,Purple,"['XL', 'L', 'S']",Dress,Silk,2008-07-22,False,Female
+P79,Black,"['XXL', 'L', 'S', 'XS', 'XL', 'M']",Blouse,Wool,2008-03-07,True,Female
