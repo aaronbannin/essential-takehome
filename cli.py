@@ -1,7 +1,9 @@
 import click
+from loguru import logger
 
 from essential_takehome.llm import (
     ASSISTANT_NAME,
+    delete_all_files,
     delete_assistant,
     get_assistant,
     make_assistant,
@@ -16,23 +18,27 @@ def cli():
 def deploy_agent():
     existing = get_assistant()
     if existing is not None:
+        logger.info(f"Assistant {ASSISTANT_NAME} already exists, updating. {existing.id}")
         updated = update_assistant(existing.id)
-        click.echo(f"Assistant {ASSISTANT_NAME} already exists, updating. {existing.id}")
         return updated.id
 
+    logger.info(f"Assistant {ASSISTANT_NAME} does not exist, creating")
     created = make_assistant()
-    click.echo(f"Created new assistant {ASSISTANT_NAME} with id {created.id}")
+    logger.info(f"Created new assistant {ASSISTANT_NAME} with id {created.id}")
     return created.id
 
 @cli.command()
 def delete_agent():
     existing = get_assistant()
     if existing is None:
-        click.echo(f"Cannot delete; {ASSISTANT_NAME} does not exist.")
+        logger.info(f"Cannot delete; {ASSISTANT_NAME} does not exist.")
         return
 
     response = delete_assistant(existing.id)
-    click.echo(response)
+    logger.info(response)
+
+    logger.info("Deleting project files")
+    delete_all_files()
 
 
 if __name__ == "__main__":
