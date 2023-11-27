@@ -49,6 +49,14 @@ def make_assistant() -> Assistant:
 def delete_assistant(assistant_id: str) -> AssistantDeleted:
     return client.beta.assistants.delete(assistant_id=assistant_id)
 
+def get_data_path():
+    cwd = Path.cwd()
+    return cwd / "essential_takehome" / "data"
+
+def get_project_files():
+    datapath = get_data_path()
+    return [f for f in datapath.iterdir() if f.is_file()]
+
 def get_file_metadata(filename: str):
     all = client.files.list()
     existing = [f for f in all if f.filename == filename]
@@ -57,26 +65,29 @@ def get_file_metadata(filename: str):
 
     return existing[0]
 
+
 def upload_file(filename: str) -> FileObject:
-    cwd = Path.cwd()
-    filepath = cwd / "essential_takehome" / "data" / filename
+    filepath = get_data_path() / filename
     with open(filepath, "rb") as f:
         res = client.files.create(file=f, purpose="assistants")
         return res
 
 def upload_files():
-    cwd = Path.cwd()
-    datapath = cwd / "essential_takehome" / "data"
+    # datapath = get_data_path()
 
-    files = [f for f in datapath.iterdir() if f.is_file()]
-    # all = datapath.glob('**/*')
-    # files = [f for f in all if f.is_file()]
+    files = get_project_files()
     for file in files:
         metadata = get_file_metadata(file.name)
         if metadata is None:
-            # upload
             res = upload_file(file.name)
             logger.info(f"Uploaded {file.name} id={res.id}")
         else:
-            # log and do nothing
             logger.info(f"File {file.name} already exists, skipping")
+
+def delete_all_files():
+    openai_files = client.files.list()
+    project_files = {f.name for f in get_project_files()}
+    for file in openai_files:
+        if file.filename in project_files:
+            res = client.files.delete(file.id)
+            logger.info(f"Deleted filename={file.filename} id={file.id} deleted={res.deleted}")
