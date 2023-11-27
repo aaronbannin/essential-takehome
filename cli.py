@@ -5,7 +5,8 @@ from essential_takehome.llm import (
     delete_assistant,
     get_assistant,
     make_assistant,
-    update_assistant
+    update_assistant,
+    upload_files as _upload_files
 )
 
 @click.group()
@@ -33,6 +34,10 @@ def delete_agent():
 
     response = delete_assistant(existing.id)
     click.echo(response)
+
+@cli.command
+def upload_files():
+    _upload_files()
 
 
 if __name__ == "__main__":
