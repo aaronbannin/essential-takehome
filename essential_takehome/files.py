@@ -10,16 +10,6 @@ class ProjPaths:
     data = root / "data"
     templates = root / "templates"
 
-# def get_data_path():
-#     cwd = Path.cwd()
-#     # Path(__file__).parent
-#     # return cwd / "essential_takehome" / "data"
-#     return ProjPaths.data
-
-# def get_local_files():
-#     datapath = get_data_path()
-#     return [f for f in ProjPaths.data.iterdir() if f.is_file()]
-
 def load_dataframes() -> dict[str, pd.DataFrame]:
     """Load dataframes from local files and return them as a dictionary."""
     data_files = [f for f in ProjPaths.data.iterdir() if f.is_file()]
