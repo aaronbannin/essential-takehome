@@ -21,7 +21,6 @@ def load_dataframes() -> dict[str, pd.DataFrame]:
         df = pd.read_csv(csv)
         datasets[csv.name] = df
 
-        # Assuming logger is set up elsewhere in your code
         logger.info(f"Loaded file {csv.name}")
     return datasets
 
