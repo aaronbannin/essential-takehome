@@ -31,6 +31,7 @@ def build_assitant_config():
     }
 
 def get_assistant() -> Optional[Assistant]:
+    logger.info("Getting Assistant info from OpenAI")
     all = client.beta.assistants.list()
     existing = [a for a in all if a.name == ASSISTANT_NAME]
     if len(existing) == 0:
