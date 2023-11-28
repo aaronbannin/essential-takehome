@@ -1,6 +1,10 @@
+from json import loads
+from pathlib import Path
+
 import click
 from loguru import logger
 
+from essential_takehome.chain import run_chain
 from essential_takehome.llm import (
     ASSISTANT_NAME,
     delete_all_files,
@@ -39,6 +43,16 @@ def delete_agent():
 
     logger.info("Deleting project files")
     delete_all_files()
+
+@cli.command()
+def eval():
+    cwd = Path.cwd()
+    questions_path = cwd / "questions.jsonl"
+    with open(questions_path) as f:
+        lines = f.read().splitlines()
+        for q in lines:
+            question_text = loads(q)["question"]
+            run_chain(question_text)
 
 
 if __name__ == "__main__":
