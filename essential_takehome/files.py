@@ -1,6 +1,28 @@
 from pathlib import Path
 
+import pandas as pd
 from jinja2 import Environment, PackageLoader, select_autoescape
+from loguru import logger
+
+
+def get_data_path():
+    cwd = Path.cwd()
+    return cwd / "essential_takehome" / "data"
+
+def get_local_files():
+    datapath = get_data_path()
+    return [f for f in datapath.iterdir() if f.is_file()]
+
+def load_dataframes() -> dict[str, pd.DataFrame]:
+    """Load dataframes from local files and return them as a dictionary."""
+    data_files = get_local_files()
+    datasets = {}
+    for csv in data_files:
+        df = pd.read_csv(csv)
+        datasets[csv.name] = df
+
+        logger.info(f"Loaded file {csv.name}")
+    return datasets
 
 class PromptManager:
     def __init__(self) -> None:
