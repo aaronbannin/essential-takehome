@@ -45,14 +45,15 @@ def delete_agent():
     delete_all_files()
 
 @cli.command()
-def eval():
+@click.option("-v", "--verbose", is_flag=True)
+def eval(verbose: bool):
     cwd = Path.cwd()
     questions_path = cwd / "questions.jsonl"
     with open(questions_path) as f:
         lines = f.read().splitlines()
         for q in lines:
             question_text = loads(q)["question"]
-            run_chain(question_text)
+            run_chain(question_text, verbose)
 
 
 if __name__ == "__main__":

@@ -11,5 +11,10 @@ class PromptManager:
     def gpt_instructions(self):
         return self.env.get_template("gpt_instructions.jinja")
 
+    # maybe change to return a string, not jinja?
+    @property
+    def analyst_prompt(self):
+        return self.env.get_template("analyst_prompt.jinja")
+
 
 Prompts = PromptManager()
