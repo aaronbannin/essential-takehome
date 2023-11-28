@@ -31,7 +31,7 @@ europe_data = merged_data[merged_data['Country'] != 'United States']  # Assuming
 europe_data = europe_data[(europe_data['month'] >= 5) & (europe_data['month'] <= 7)]
 
 # Step 3: Count the occurrences of each product color
-color_counts = europe_data['Available Colors'].apply(eval).explode().value_counts()
+color_counts = europe_data['Available Colors'].explode().value_counts()
 
 # Step 4: Sort the colors in descending order based on their count
 sorted_colors = color_counts.sort_values(ascending=False)
