@@ -6,9 +6,8 @@ from langchain.schema import StrOutputParser
 from langchain.prompts import PromptTemplate
 from loguru import logger
 
-from essential_takehome.llm import get_local_files
-from essential_takehome.prompts import Prompts
-from essential_takehome.tools import python_repl
+from essential_takehome.files import get_local_files, load_dataframes, Prompts
+from essential_takehome.tools import PythonREPL
 
 
 load_dotenv()
@@ -34,18 +33,17 @@ def run_chain(question: str, verbose: bool = False):
     if verbose:
         callbacks.append(ConsoleCallbackHandler())
 
-    data_files = get_local_files()
-    datasets: dict[str, pd.DataFrame] = {}
-    for csv in data_files:
-        df = pd.read_csv(csv)
-        datasets[csv.name] = df
+    datasets = load_dataframes()
+    # for csv in data_files:
+    #     df = pd.read_csv(csv)
+    #     datasets[csv.name] = df
 
-        logger.info(f"Loaded file {csv.name}")
+    #     logger.info(f"Loaded file {csv.name}")
 
     # this Langchain model relates to chat completions API
     # https://github.com/langchain-ai/langchain/blob/686162670e2fe15fb906999da84d36a273b2f25e/libs/langchain/langchain/chat_models/openai.py#L312
     llm = ChatOpenAI(verbose=True)
-    chain = (analyst_prompt | llm | StrOutputParser() | python_repl)
+    chain = (analyst_prompt | llm | StrOutputParser() | PythonREPL.as_tool())
 
     summaries = "\n".join([summary_from_dataframe(name, df) for name, df in datasets.items()])
     res = chain.invoke(
