@@ -6,7 +6,7 @@ from langchain.schema import StrOutputParser
 from langchain.prompts import PromptTemplate
 from loguru import logger
 
-from essential_takehome.files import get_local_files, load_dataframes, Prompts
+from essential_takehome.files import load_dataframes, Prompts
 from essential_takehome.tools import PythonREPL
 
 
@@ -34,11 +34,6 @@ def run_chain(question: str, verbose: bool = False):
         callbacks.append(ConsoleCallbackHandler())
 
     datasets = load_dataframes()
-    # for csv in data_files:
-    #     df = pd.read_csv(csv)
-    #     datasets[csv.name] = df
-
-    #     logger.info(f"Loaded file {csv.name}")
 
     # this Langchain model relates to chat completions API
     # https://github.com/langchain-ai/langchain/blob/686162670e2fe15fb906999da84d36a273b2f25e/libs/langchain/langchain/chat_models/openai.py#L312
