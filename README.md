@@ -1,6 +1,9 @@
 # Question Labeling
 
 ## Reasoning
+!! TODO !! Explain why we are breaking down into categories. It helps identify the agent's performance on specific tasks and can be used to improve performance of the underlying model. Why is the agent succeeding or failing?
+!! Do we need a "quantity of steps" or "lenghth of chain of thought" rubric? It seems to be implicit in the current categories
+
 A question's difficulty is heavily influenced by the underlying data model. One of the primary goals of ETL pipelines is to structure the data to simplify queries. This is traditionally defined as denormalizing a transactional data model (OLTP) into one that is designed for analytic workloads (OLAP; Star Schema is a common design pattern). A question that is highly aligned with the data model is easy to answer; a question that is at odds with the data model is hard to answer.
 
 ## Rubric
