@@ -9,6 +9,7 @@ class ProjPaths:
     root = Path(__file__).parent
     data = root / "data"
     templates = root / "templates"
+    answers = root / "answers"
 
 def load_dataframes() -> dict[str, pd.DataFrame]:
     """Load dataframes from local files and return them as a dictionary."""
@@ -33,14 +34,13 @@ class PromptManager:
         with open(filepath) as f:
             return f.read()
 
-
-    @property
-    def gpt_instructions(self):
-        return self.env.get_template("gpt_instructions.jinja")
-
     @property
     def analyst_prompt(self):
+        """Langchain wants raw text, not the instantiated Jinja Template"""
         return self._raw_text("analyst_prompt")
 
+    @property
+    def judge_prompt(self):
+        return self._raw_text("judge_prompt")
 
 Prompts = PromptManager()
