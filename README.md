@@ -4,7 +4,7 @@
 A question's difficulty is heavily influenced by the underlying data model. One of the primary goals of ETL pipelines is to structure the data to simplify queries. This is traditionally defined as denormalizing a transactional data model (OLTP) into one that is designed for analytic workloads (OLAP; Star Schema is a common design pattern). A question that is highly aligned with the data model is easy to answer; a question that is at odds with the data model is hard to answer.
 
 ## Rubric
-- **Quantity of datasets**: Merging datasets are the most common source of bugs within data modeling. A `join` operation can return the same quantity of rows as the underlying set, remove rows from teh underlying set, or it might increase the rows. The latter, when done unintentionally, is known as a [fan out](https://www.googlecloudcommunity.com/gc/Technical-Tips-Tricks/The-problem-of-SQL-fanouts/ta-p/587483).
+- **Quantity of datasets**: Merging datasets are the most common source of bugs within data modeling. A `join` operation can return the same quantity of rows as the underlying set, remove rows from the underlying set, or it might increase the rows. The latter, when done unintentionally, is known as a [fan out](https://www.googlecloudcommunity.com/gc/Technical-Tips-Tricks/The-problem-of-SQL-fanouts/ta-p/587483).
     - **Easy**: Question can be answered with a single table/dataframe. No joins required.
     - **Medium**: Multiple datasets combined with simple join logic.
     - **Hard**: Complex join logic; e.g. aggregation required prior to join to avoid fan out.
