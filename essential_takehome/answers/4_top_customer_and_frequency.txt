@@ -1,0 +1,7 @@
+             All_Purchases  Purchases_Per_Month
+Customer ID
+8201                   161                  0.2
+13846                  192                  0.2
+19623                  142                  0.2
+22433                  195                  0.2
+22902                  185                  0.2

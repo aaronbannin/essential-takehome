@@ -1,0 +1,4 @@
+        total_price  transaction_count  average_spend
+Season
+Spring       704981              16033      43.970623
+Summer       667044              15004      44.457745

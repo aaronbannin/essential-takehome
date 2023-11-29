@@ -1,0 +1,28 @@
+Available Colors       Black                                                 \
+Type                  Blouse                              Dress
+Materials             Cotton   Polyester       Wool      Cotton       Denim
+Date
+2008-04-01         No Change   No Change  No Change   No Change   No Change
+2008-04-02        Decreasing  Increasing  No Change   No Change  Increasing
+2008-04-03        Decreasing   No Change  No Change  Decreasing  Decreasing
+2008-04-04        Increasing   No Change  No Change  Decreasing  Decreasing
+2008-04-05        Increasing  Increasing  No Change  Increasing   No Change
+...                      ...         ...        ...         ...         ...
+2008-08-09         No Change   No Change  No Change   No Change  Increasing
+2008-08-10        Increasing   No Change  No Change   No Change  Decreasing
+2008-08-11        Increasing  Increasing  No Change   No Change   No Change
+2008-08-12        Decreasing  Decreasing  No Change   No Change  Increasing
+2008-08-13        Decreasing   No Change  No Change   No Change   No Change
+
+Available Colors                                                             \
+Type                              Jacket                              Jeans
+Materials               Wool       Denim  Polyester        Silk      Cotton
+Date
+2008-04-01         No Change   No Change  No Change   No Change   No Change
+2008-04-02         No Change  Increasing  No Change   No Change  Decreasing
+2008-04-03        Decreasing  Decreasing  No Change  Decreasing  Increasing
+2008-04-04        Increasing  Increasing  No Change   No Change  Decreasing
+2008-04-05        Decreasing  Decreasing  No Change  Increasing   No Change
+...
+2008-08-12         No Change
+2008-08-13         No Change

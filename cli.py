@@ -1,6 +1,4 @@
-# from json import loads
-# from pathlib import Path
-from dataclasses import dataclass, asdict, fields
+from dataclasses import dataclass
 from typing import Any
 
 import click
@@ -12,11 +10,12 @@ import essential_takehome.questions as questions
 from essential_takehome.chains import run_chain, run_judge
 from essential_takehome.files import ProjPaths, load_dataframes
 
+
 @dataclass
 class Response:
     key: str
     difficulty: dict[str, int]
-    score: int
+    is_correct: bool
 
     def as_row(self):
         return {
@@ -43,6 +42,10 @@ class Response:
         return self.bin * len(self.difficulty.keys())
 
     @property
+    def score(self):
+        return self.max_possible_score if self.is_correct else 0
+
+    @property
     def rating(self) -> str:
         if self.bin == 1:
             return "easy"
@@ -58,12 +61,9 @@ class ReportCard:
     def score_result(self, question: dict[str, Any], judge_response: str):
         key = question["key"]
         difficulty = self._get_difficulty(question)
-        score = 0
+        is_correct = "yes" in judge_response
 
-        if "yes" in judge_response:
-            score = sum([int(v) for v in difficulty.values()])
-
-        self.responses.append(Response(key, difficulty, score))
+        self.responses.append(Response(key, difficulty, is_correct))
 
     def _get_difficulty(self, question: dict[str, Any]) -> dict[str, int]:
         key = question["key"]
