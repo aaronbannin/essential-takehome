@@ -2,6 +2,8 @@ from dataclasses import dataclass
 from typing import Any
 
 import click
+from dotenv import load_dotenv
+from langchain.chat_models import ChatAnthropic
 from langchain.chat_models import ChatOpenAI
 from loguru import logger
 from tabulate import tabulate
@@ -9,6 +11,9 @@ from tabulate import tabulate
 import essential_takehome.questions as questions
 from essential_takehome.chains import run_chain, run_judge
 from essential_takehome.files import ProjPaths, load_dataframes
+
+
+load_dotenv()
 
 
 @dataclass
@@ -83,18 +88,39 @@ class ReportCard:
         return f"Final Grade: {pct}\n{table}"
 
 
+models = [
+    "gpt3",
+    "gpt4",
+    "clau"
+]
+
+model_to_vendor ={
+    "gpt3": "gpt-3.5-turbo",
+    "gpt4": "gpt-4",
+    "clau": "claude-2.1"
+}
+
+def get_llm(model: str):
+    # this Langchain model relates to chat completions API
+    # https://github.com/langchain-ai/langchain/blob/686162670e2fe15fb906999da84d36a273b2f25e/libs/langchain/langchain/chat_models/openai.py#L312
+    if "gpt" in model:
+        return ChatOpenAI(model_name=model)
+
+    return ChatAnthropic(model=model)
 
 @click.group()
 def cli():
     pass
 
 @cli.command()
+@click.option('-m', '--model', default="gpt3", type=click.Choice(models))
 @click.option("-v", "--verbose", is_flag=True)
-def eval(verbose: bool):
+def eval(model: str, verbose: bool):
     datasets = load_dataframes()
-    llm = ChatOpenAI(verbose=True)
+    llm = get_llm(model_to_vendor[model])
     report_card = ReportCard()
 
+    logger.info(f"Using {model_to_vendor[model]}")
     for q in questions.base:
         llm_response = run_chain(llm, q["question"], datasets, verbose)
 

@@ -1,7 +1,5 @@
-# import pandas as pd
 from dotenv import load_dotenv
 from langchain.callbacks.tracers import ConsoleCallbackHandler
-# from langchain.chat_models import ChatOpenAI
 from langchain.chat_models.base import BaseChatModel
 from langchain.schema import StrOutputParser
 from langchain.prompts import PromptTemplate
@@ -39,11 +37,7 @@ def run_chain(llm: BaseChatModel, question: str, datasets: dict[str, DataFrame],
     if verbose:
         callbacks.append(ConsoleCallbackHandler())
 
-    # this Langchain model relates to chat completions API
-    # https://github.com/langchain-ai/langchain/blob/686162670e2fe15fb906999da84d36a273b2f25e/libs/langchain/langchain/chat_models/openai.py#L312
-    # llm = ChatOpenAI(verbose=True)
     chain = (analyst_prompt | llm | StrOutputParser() | PythonREPL.as_tool())
-
     summaries = "\n".join([summary_from_dataframe(name, df) for name, df in datasets.items()])
     result = chain.invoke(
         {"question": question, "summaries": summaries},
