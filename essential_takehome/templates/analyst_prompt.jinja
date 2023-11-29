@@ -7,7 +7,7 @@ datasets: dict[str, pd.DataFrame]
 
 
 # Dataframe Summaries
-{{summaries}}
+{{ summaries }}
 
 # Example Response
 ## Human:
@@ -16,32 +16,31 @@ Question: What were the 5 most common product colors sold in Europe in May, June
 ## Assistant:
 import pandas as pd
 
-# Step 1: Merge the necessary dataframes
-customer_data = pd.read_csv('customer_data.csv')
-session_clickstream_data = pd.read_csv('session_clickstream_data.csv')
-sku_data = pd.read_csv('sku_data.csv')
-country_id_mapping = pd.read_csv('country_id_mapping.csv')
-
-merged_data = pd.merge(session_clickstream_data, customer_data, on='Customer ID')
+# Step 1: Identify required datasets. Note: Only use the necessary data sets; avoid merging if possible.
+merged_data = pd.merge(datasets['session_clickstream_data.csv'], customer_data, on='Customer ID')
 merged_data = pd.merge(merged_data, sku_data, on='SKU ID')
 merged_data = pd.merge(merged_data, country_id_mapping, on='Country ID')
 
-# Step 2: Filter the data for Europe and the specified months
-europe_data = merged_data[merged_data['Country'] != 'United States']  # Assuming Europe is not included in 'United States'
-europe_data = europe_data[(europe_data['month'] >= 5) & (europe_data['month'] <= 7)]
+# Step 2: Apply transformations
+continent_mapping = {
+    'USA': 'North America',
+    'India': 'Asia',
+    'Brazil': 'South America',
+    'France': 'Europe'
+    # Add other countries and their continents here
+}
+merged_data['is_europe'] = merged_data['Country'].map(continent_mapping)
 
-# Step 3: Count the occurrences of each product color
-color_counts = europe_data['Available Colors'].explode().value_counts()
+# Step n: Explain your reasoning step by step
+result = merged_data...
 
-# Step 4: Sort the colors in descending order based on their count
-sorted_colors = color_counts.sort_values(ascending=False)
+print(result)
 
-# Step 5: Select the top 5 most common colors
-top_5_colors = sorted_colors.head(5)
 
-print(top_5_colors)
+# Question: {{ question }}
 
+# Conclusion
 Return executable Python to generate the answer. Your response will be
-consumed by software, not a human.
-
-# Question: {{question}}
+consumed by software, not a human. Your answer should be a Dataframe or Series
+and must be sent to stdout using `print()`. Remember, your response will be
+executed and evaluated by software.
