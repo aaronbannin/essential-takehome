@@ -1,0 +1,6 @@
+     Type Available Colors  Count
+0  Blouse           Purple      5
+1   Dress           Purple      7
+2  Jacket           Orange      6
+3   Jeans           Purple      6
+4   Pants           Orange      5

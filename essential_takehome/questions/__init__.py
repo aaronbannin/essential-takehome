@@ -4,28 +4,25 @@ base = [
     {
         "question": "In which month was the most products sold?",
         "key": "1_most_sold_month",
-        "answers": ["4"],
         "difficulty": 1,
         "cot": "I need to use session_clickstream_data.csv to see when products were sold. Group by month and count when Purchased is true.",
         "reasoning": "One dataset needed, no fractions, no windowing, simple group by. Request is very clearly scoped."
     },
-    # {
-    #     # currently overfit b/c used as example in prompt
-    #     "question": "What were the 5 most common product colors sold in Europe in May, June, and July",
-    #     "key": "",
-    #     "answers": ["Orange", "Grey", "Purple", "Blue", "Red"],
-    #     "difficulty": "medium",
-    #     "cot": "I need to use session_clickstream_data.csv to see when and where products were sold, sku_data.csv for Availible Colors, and country_id_mapping.csv. I need to identify all European countries in country_id_mapping. Then filter the clickstream for the months of May, June, and July and European countries. Aggregate by color and take the top 5 results.",
-    #     "reasoning": "Merging 3 files together. Creating a dimensional hierarchy for countries. Then filter and aggregate. Request is clear."
-    # },
-    # {
-    #     "question": "What is the most common color amongst the different clothing types?",
-    #     # in notebook
-    #     "answers": [],
-    #     "difficulty": "easy",
-    #     "cot": "I need sku_data.csv for Availible Colors and Type. Group by Type and Availible Colors, counting the rows. Order by count descending and take the first row.",
-    #     "reasoning": "Only 1 file is needed, no fractions, no windowing. A simple transformation to group by color and type. Request is clear. Two stage aggregation."
-    # },
+    {
+        # currently overfit b/c used as example in prompt
+        "question": "What were the 5 most common product colors sold in Europe in May, June, and July",
+        "key": "2_top_5_colors",
+        "difficulty": 2,
+        "cot": "I need to use session_clickstream_data.csv to see when and where products were sold, sku_data.csv for Availible Colors, and country_id_mapping.csv. I need to identify all European countries in country_id_mapping. Then filter the clickstream for the months of May, June, and July and European countries. Aggregate by color and take the top 5 results.",
+        "reasoning": "Merging 3 files together. Creating a dimensional hierarchy for countries. Then filter and aggregate. Request is clear."
+    },
+    {
+        "question": "What is the most common color amongst the different clothing types?",
+        "key": "3_most_common_color",
+        "difficulty": 1,
+        "cot": "I need sku_data.csv for Availible Colors and Type. Group by Type and Availible Colors, counting the rows. Order by count descending and take the first row.",
+        "reasoning": "Only 1 file is needed, no fractions, no windowing. A simple transformation to group by color and type. Request is clear. Two stage aggregation."
+    },
     # {
     #     "question": "Identify top customers with high purchases and determine what is their common frequency to buy?",
     #     "answers": [],

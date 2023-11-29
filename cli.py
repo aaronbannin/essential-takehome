@@ -1,11 +1,12 @@
 # from json import loads
 # from pathlib import Path
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict, fields
 from typing import Any
 
 import click
 from langchain.chat_models import ChatOpenAI
 from loguru import logger
+from tabulate import tabulate
 
 import essential_takehome.questions as questions
 from essential_takehome.chains import run_chain, run_judge
@@ -43,7 +44,9 @@ class ReportCard:
         scores = sum([r.score for r in self.responses])
         pct = scores / diff
 
-        return f"Final Grade: {pct}\n{all_responses}"
+        # Response.
+        table = tabulate([asdict(r) for r in self.responses], headers="keys")
+        return f"Final Grade: {pct}\n{table}"
 
 
 
