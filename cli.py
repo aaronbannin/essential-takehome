@@ -88,13 +88,7 @@ class ReportCard:
         return f"Final Grade: {pct}\n{table}"
 
 
-models = [
-    "gpt3",
-    "gpt4",
-    "clau"
-]
-
-model_to_vendor ={
+model_map ={
     "gpt3": "gpt-3.5-turbo",
     "gpt4": "gpt-4",
     "clau": "claude-2.1"
@@ -113,14 +107,14 @@ def cli():
     pass
 
 @cli.command()
-@click.option('-m', '--model', default="gpt3", type=click.Choice(models))
+@click.option('-m', '--model', default="gpt3", type=click.Choice(model_map.keys()))
 @click.option("-v", "--verbose", is_flag=True)
 def eval(model: str, verbose: bool):
     datasets = load_dataframes()
-    llm = get_llm(model_to_vendor[model])
+    llm = get_llm(model_map[model])
     report_card = ReportCard()
 
-    logger.info(f"Using {model_to_vendor[model]}")
+    logger.info(f"Using {model_map[model]}")
     for q in questions.base:
         llm_response = run_chain(llm, q["question"], datasets, verbose)
 
