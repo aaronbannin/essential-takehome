@@ -8,7 +8,6 @@ A question's difficulty is heavily influenced by the underlying data model. One 
     - **Easy**: Question can be answered with a single table/dataframe. No joins required.
     - **Medium**: Multiple datasets combined with simple join logic.
     - **Hard**: Complex join logic; e.g. aggregation required prior to join to avoid fan out.
-- ~~Placement of Aggregations: when does an aggregation need to occur?~~
 - **Use of Fractions**: Aggregations are foundational to data analysis, and fractions must be aggregated with the correct order. Consider conversion rate; User A has 2 visits and 1 conversion User B has 3 visits and 1 conversion. If we calculate the ratio and then add, we end up with `(0.5 + 0.33)/2 = 0.375`, which is incorrect. The total visists is 5, and the total conversions is 2. Our formula should be `(1 + 1) / (2 + 3) = 0.4`.
     - **Easy**: No fractions are required.
     - **Medium**: Simple aggregation of two measures that are combined in the final step.
