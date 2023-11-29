@@ -41,8 +41,9 @@ def run_chain(question: str, verbose: bool = False):
     chain = (analyst_prompt | llm | StrOutputParser() | PythonREPL.as_tool())
 
     summaries = "\n".join([summary_from_dataframe(name, df) for name, df in datasets.items()])
-    res = chain.invoke(
+    result = chain.invoke(
         {"question": question, "summaries": summaries},
         config={'callbacks': callbacks}
     )
-    logger.info(res)
+
+    return result

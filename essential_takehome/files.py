@@ -5,17 +5,14 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 from loguru import logger
 
 
-def get_data_path():
-    cwd = Path.cwd()
-    return cwd / "essential_takehome" / "data"
-
-def get_local_files():
-    datapath = get_data_path()
-    return [f for f in datapath.iterdir() if f.is_file()]
+class ProjPaths:
+    root = Path(__file__).parent
+    data = root / "data"
+    templates = root / "templates"
 
 def load_dataframes() -> dict[str, pd.DataFrame]:
     """Load dataframes from local files and return them as a dictionary."""
-    data_files = get_local_files()
+    data_files = [f for f in ProjPaths.data.iterdir() if f.is_file()]
     datasets = {}
     for csv in data_files:
         df = pd.read_csv(csv)
@@ -32,7 +29,7 @@ class PromptManager:
         )
 
     def _raw_text(self, prompt_name: str) -> str:
-        filepath = Path.cwd() / "essential_takehome" / "templates" / (prompt_name + ".jinja")
+        filepath = ProjPaths.templates / (prompt_name + ".jinja")
         with open(filepath) as f:
             return f.read()
 
