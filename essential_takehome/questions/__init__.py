@@ -15,7 +15,6 @@ base = [
         "reasoning": "One dataset needed, no fractions, no windowing, simple group by. Request is very clearly scoped."
     },
     {
-        # currently overfit b/c used as example in prompt
         "question": "What were the 5 most common product colors sold in Europe in May, June, and July",
         "key": "2_top_5_colors",
         "difficulty": {

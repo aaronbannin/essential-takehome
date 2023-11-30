@@ -56,6 +56,3 @@ A question's difficulty is heavily influenced by the underlying data model. One 
 - Launch environment: `poetry shell`, or `source .venv/bin/activate` if you know the location of your `venv`.
 - `python cli.py --help` to list availible commands
 - `python cli.py eval` to run evaluation suite. Choose LLM using `-m` flag; see `--help` for options.
-
-# Adding Questions
-
