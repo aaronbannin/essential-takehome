@@ -5,31 +5,23 @@ following variable:
 datasets: dict[str, pd.DataFrame]
 
 
-
 # Dataframe Summaries
 {{ summaries }}
 
 # Example Response
 ## Human:
-Question: What were the 5 most common product colors sold in Europe in May, June, and July
+Question: What is the...
 
 ## Assistant:
 import pandas as pd
 
 # Step 1: Identify required datasets. Note: Only use the necessary data sets; avoid merging if possible.
-merged_data = pd.merge(datasets['session_clickstream_data.csv'], customer_data, on='Customer ID')
-merged_data = pd.merge(merged_data, sku_data, on='SKU ID')
-merged_data = pd.merge(merged_data, country_id_mapping, on='Country ID')
+customer_data = datasets['customer_data.csv']
+session_clickstream_data = datasets['session_clickstream_data.csv']
+merged_data = pd.merge(session_clickstream_data, customer_data, on='Customer ID')
 
 # Step 2: Apply transformations
-continent_mapping = {
-    'USA': 'North America',
-    'India': 'Asia',
-    'Brazil': 'South America',
-    'France': 'Europe'
-    # Add other countries and their continents here
-}
-merged_data['is_europe'] = merged_data['Country'].map(continent_mapping)
+# Add columns, cast columns into correct type e.g. datetime, list
 
 # Step n: Explain your reasoning step by step
 result = merged_data...
@@ -43,4 +35,4 @@ print(result)
 Return executable Python to generate the answer. Your response will be
 consumed by software, not a human. Your answer should be a Dataframe or Series
 and must be sent to stdout using `print()`. Remember, your response will be
-executed and evaluated by software.
+executed and evaluated by software. Return only the executable script, nothing else.
