@@ -1,10 +1,30 @@
 # Question Labeling
 
 ## Reasoning
-!! TODO !! Explain why we are breaking down into categories. It helps identify the agent's performance on specific tasks and can be used to improve performance of the underlying model. Why is the agent succeeding or failing?
-!! Do we need a "quantity of steps" or "lenghth of chain of thought" rubric? It seems to be implicit in the current categories
+The goal of the labeling is to not only provide obervability into the level of complexity that the agent can handle, but also
+
+There are two major goals for question labeling:
+1. Provide observability into the level of complexity the agent can handle
+2. Give insight into how to improve the agent.
+
+In other words, we don't want to just know if the agent is good at it's job. We also want to know where the agent is failing and how to make it better.
+
+To achieve this, we need to take a step back and understand the tasks presented. What are the common tasks within data analysis? How do they influence the difficulty of the task? Can we clealy communicate why one task is easy and the other hard?
+
+I created a rubric for labeling that highlights 5 common tasks within analysis. For a given quesiton, each task is scored with 1 (easy), 2 (easy), or 3 (hard). A question is rated easy, medium, or hard based on aggregating the rating of each task.
+- **5**: Easy (minimum score, all 1's)
+- **6-10**: Medium
+- **11++**: Hard
+
+Identifying and scoring sub-tasks helps bring objectivity to the labeling process. We want an approach that can scale to more questions and be performed by more people. While the labeling task does require expertise in data analysis, the scoring system should minimize disagreement between labelers.
+
+This rubric also allows for deeper insights into the agent's performance. As a benchmark, we can identify if the agent's behavior has changed. Run `n` may have the same overall score as `n - 1`, but that top level score may be hiding large changes in performance that neutralize each other. A balanced rubric helps prevent overfitting.
+
+The additional dimensionality also allows for targeted improvements. It's much easier to develop a strategy for improving the agent's ability to perform transformations then stumble around looking for an overall 10% performance boost.
 
 A question's difficulty is heavily influenced by the underlying data model. One of the primary goals of ETL pipelines is to structure the data to simplify queries. This is traditionally defined as denormalizing a transactional data model (OLTP) into one that is designed for analytic workloads (OLAP; Star Schema is a common design pattern). A question that is highly aligned with the data model is easy to answer; a question that is at odds with the data model is hard to answer.
+
+
 
 ## Rubric
 - **Quantity of datasets**: Merging datasets are the most common source of bugs within data modeling. A `join` operation can return the same quantity of rows as the underlying set, remove rows from the underlying set, or it might increase the rows. The latter, when done unintentionally, is known as a [fan out](https://www.googlecloudcommunity.com/gc/Technical-Tips-Tricks/The-problem-of-SQL-fanouts/ta-p/587483).

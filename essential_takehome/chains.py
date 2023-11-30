@@ -3,7 +3,6 @@ from langchain.callbacks.tracers import ConsoleCallbackHandler
 from langchain.chat_models.base import BaseChatModel
 from langchain.schema import StrOutputParser
 from langchain.prompts import PromptTemplate
-from loguru import logger
 from pandas import DataFrame
 
 from essential_takehome.files import Prompts
@@ -24,10 +23,6 @@ def summary_from_dataframe(name: str, df: DataFrame):
 
 
 def run_chain(llm: BaseChatModel, question: str, datasets: dict[str, DataFrame], verbose: bool = False):
-    """
-    To see fully rendered prompt, run in verbose mode and look for the following log line:
-    [llm/start] [1:chain:RunnableSequence > 3:llm:ChatOpenAI] Entering LLM run with input:
-    """
     callbacks = []
     analyst_prompt = PromptTemplate.from_template(
         Prompts.analyst_prompt,

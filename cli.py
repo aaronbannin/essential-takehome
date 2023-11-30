@@ -107,14 +107,19 @@ def cli():
     pass
 
 @cli.command()
-@click.option('-m', '--model', default="gpt3", type=click.Choice(model_map.keys()))
+@click.option("-m", "--model", default="gpt3", type=click.Choice(model_map.keys()))
 @click.option("-v", "--verbose", is_flag=True)
 def eval(model: str, verbose: bool):
+    """
+    To see fully rendered prompt, run in verbose mode and look for the following log line:
+    [llm/start] [1:chain:RunnableSequence > 3:llm:ChatOpenAI] Entering LLM run with input:
+    """
     datasets = load_dataframes()
     llm = get_llm(model_map[model])
     report_card = ReportCard()
 
     logger.info(f"Using {model_map[model]}")
+
     for q in questions.base:
         llm_response = run_chain(llm, q["question"], datasets, verbose)
 
