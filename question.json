@@ -1,0 +1,13 @@
+{
+    "question": "What is the average spend in the summer vs spring?",
+    "key": "8_season_average_spend",
+    "difficulty": {
+        "datasets": 1,
+        "fractions": 2,
+        "windowing": 1,
+        "transformations": 2,
+        "scope": 1
+    },
+    "cot": "I need session_clickstream_data.csv for time series. Transform month into season, filter for Purchased. Aggregate to sum price and count purchases. Divide in final step.",
+    "reasoning": "One dataset, one fraction at final step. No windowing, small transformation. Request is clearly scoped."
+}
