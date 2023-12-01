@@ -1,11 +1,14 @@
+import json
 from dataclasses import dataclass
 from typing import Any
 
 import click
 from dotenv import load_dotenv
+from langchain.chat_models.base import BaseChatModel
 from langchain.chat_models import ChatAnthropic
 from langchain.chat_models import ChatOpenAI
 from loguru import logger
+from pandas import DataFrame
 from tabulate import tabulate
 
 import essential_takehome.questions as questions
@@ -94,13 +97,34 @@ model_map ={
     "clau": "claude-2.1"
 }
 
-def get_llm(model: str):
+def get_llm(model: str) -> BaseChatModel:
     # this Langchain model relates to chat completions API
     # https://github.com/langchain-ai/langchain/blob/686162670e2fe15fb906999da84d36a273b2f25e/libs/langchain/langchain/chat_models/openai.py#L312
     if "gpt" in model:
         return ChatOpenAI(model_name=model)
 
     return ChatAnthropic(model=model)
+
+
+class Context:
+    datasets: dict[str, DataFrame]
+    llm: BaseChatModel
+    report_card: ReportCard
+
+    def __init__(self, model: str) -> None:
+        self.datasets = load_dataframes()
+        self.llm = get_llm(model_map[model])
+        self.report_card = ReportCard()
+
+def eval_question(ctx: Context, question: dict[str, Any], answer: str, verbose: bool):
+    llm_response = run_chain(ctx.llm, question["question"], ctx.datasets, verbose)
+    result = run_judge(ctx.llm, answer, llm_response, verbose)
+    logger.info("Judge result")
+    print(result)
+
+    ctx.report_card.score_result(question, result)
+    return result
+
 
 @click.group()
 def cli():
@@ -109,33 +133,39 @@ def cli():
 @cli.command()
 @click.option("-m", "--model", default="gpt3", type=click.Choice(model_map.keys()))
 @click.option("-v", "--verbose", is_flag=True)
-def eval(model: str, verbose: bool):
+def eval_all(model: str, verbose: bool):
     """
+    Evaluate everything in `questions/` dir. Each question must have an answer in `answers/`.
+
     To see fully rendered prompt, run in verbose mode and look for the following log line:
     [llm/start] [1:chain:RunnableSequence > 3:llm:ChatOpenAI] Entering LLM run with input:
     """
-    datasets = load_dataframes()
-    llm = get_llm(model_map[model])
-    report_card = ReportCard()
+    ctx = Context(model)
 
     logger.info(f"Using {model_map[model]}")
 
     for q in questions.base:
-        llm_response = run_chain(llm, q["question"], datasets, verbose)
-
-        logger.info("Result of Python returned from LLM")
-        print(llm_response)
-
         answer_file = ProjPaths.answers / (q["key"] + ".txt")
         with open(answer_file) as a:
             answer = a.read()
-            result = run_judge(llm, answer, llm_response, verbose)
-            logger.info("Judge result")
-            print(result)
+            eval_question(ctx, q, answer, verbose)
 
-            report_card.score_result(q, result)
+    logger.info(ctx.report_card.report())
 
-    logger.info(report_card.report())
+
+@cli.command()
+@click.option("-m", "--model", default="gpt3", type=click.Choice(model_map.keys()))
+@click.option("-v", "--verbose", is_flag=True)
+@click.option("-q", "--question-file", type=click.File())
+@click.option("-a", "--answer-file", type=click.File())
+def eval(model: str, verbose: bool, question_file: click.File, answer_file: click.File):
+    """
+    Evaluate in a single question. Both question and answer need to be a file.
+    """
+    ctx = Context(model)
+    q = json.loads(question_file.read())
+    eval_question(ctx, q, answer_file.read(), verbose)
+    logger.info(ctx.report_card.report())
 
 
 if __name__ == "__main__":

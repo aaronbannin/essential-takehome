@@ -51,8 +51,9 @@ A question's difficulty is heavily influenced by the underlying data model. One 
 
 # Local Setup
 - Install [Poetry](https://python-poetry.org/docs/).
-- Create `.env` file and add `OPEN_AI_API_KEY`.
+- Create `.env` file and add `OPEN_AI_API_KEY` and `ANTHROPIC_API_KEY`.
 - Install dependancies: `poetry install`.
 - Launch environment: `poetry shell`, or `source .venv/bin/activate` if you know the location of your `venv`.
 - `python cli.py --help` to list availible commands
-- `python cli.py eval` to run evaluation suite. Choose LLM using `-m` flag; see `--help` for options.
+- `python cli.py eval-all` to run full evaluation suite. Choose LLM using `-m` flag; see `--help` for options.
+- `python cli.py eval -q question.json -a answer.txt` to run single question. Pass in files using `-q` and `-a` arguments.
